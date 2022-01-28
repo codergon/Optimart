@@ -1,6 +1,6 @@
 import React from "react";
 import sty from "../../styles/Components.module.css";
-import NumberWithCommas from "../utils/numberWithCommas";
+import NumberWithCommas from "../utils/NumberWithCommas";
 
 const AssetItem = ({ data }) => {
   return (
