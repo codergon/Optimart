@@ -12,8 +12,8 @@ const index = () => {
       <div className={sty.explore_sect}>
         <SideDecor />
         <div className={sty.explore_list}>
-          {data?.map((item) => {
-            return <AssetItem data={item} />;
+          {data?.map((item, index) => {
+            return <AssetItem data={item} key={index} />;
           })}
         </div>
       </div>

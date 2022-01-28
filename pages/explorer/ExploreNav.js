@@ -13,6 +13,7 @@ const ExploreNav = () => {
                   ? sty.explore_type_item_active
                   : sty.explore_type_item
               }
+              key={index}
             >
               {item}
             </div>

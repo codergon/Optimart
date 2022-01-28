@@ -25,7 +25,7 @@ const Navbar = () => {
           })}
         </ul>
         <div className="top_nav_currency">
-          Algo <i class="uil uil-angle-down"></i>
+          Algo <i className="uil uil-angle-down"></i>
         </div>
 
         <div className="top_nav_profile">
@@ -40,7 +40,7 @@ const Navbar = () => {
             {`${wallet_address?.slice(0, 7)}...${wallet_address?.slice(-3)}`}
           </div>
 
-          {/* <i class="uil uil-wallet" style={{ marginLeft: "5px" }} /> */}
+          {/* <i className="uil uil-wallet" style={{ marginLeft: "5px" }} /> */}
         </div>
       </div>
     </nav>

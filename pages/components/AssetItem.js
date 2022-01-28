@@ -22,7 +22,7 @@ const AssetItem = ({ data }) => {
 
         <div className={sty.asset_fav_bid}>
           <div className={sty.asset_fav_button}>
-            <i class="uil uil-heart-alt"></i>
+            <i className="uil uil-heart-alt"></i>
           </div>
           <div className={sty.asset_bid_button}>
             <p>Bid</p>
