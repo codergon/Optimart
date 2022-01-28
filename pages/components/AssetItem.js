@@ -1,5 +1,6 @@
 import React from "react";
 import sty from "../../styles/Components.module.css";
+import NumberWithCommas from "../utils/numberWithCommas";
 
 const AssetItem = ({ data }) => {
   return (
@@ -15,7 +16,7 @@ const AssetItem = ({ data }) => {
         </div>
 
         <div className={sty.asset_price_artiste}>
-          <p>{data?.price} Choice</p>
+          <p>{NumberWithCommas(data?.price)} Choice</p>
           <p>{data?.artiste}</p>
         </div>
 
