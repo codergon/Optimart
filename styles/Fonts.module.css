@@ -1,0 +1,56 @@
+@font-face {
+  font-family: "author";
+  src: url("../public/fonts/Author/Author-Variable.woff2") format("woff2"),
+    url("../public/fonts/Author/Author-Variable.woff") format("woff"),
+    url("../public/fonts/Author/Author-Variable.ttf") format("truetype");
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "author-italic";
+  src: url("../public/fonts/Author/Author-VariableItalic.woff2") format("woff2"),
+    url("../public/fonts/Author/Author-VariableItalic.woff") format("woff"),
+    url("../public/fonts/Author/Author-VariableItalic.ttf") format("truetype");
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "grotesk";
+  src: url("../public/fonts/HKGrotesk-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "fraunces";
+  src: url("../public/fonts/Fraunces.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "value1";
+  src: url("../public/fonts/ValueSansPro-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "value2";
+  src: url("../public/fonts/ValueSansPro-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "value3";
+  src: url("../public/fonts/ValueSansPro-Bold.ttf") format("truetype");
+}
+
+/*  */
+@font-face {
+  font-family: "aeonik1";
+  src: url("../public/fonts/Aeonik/Aeonik-Thin.otf");
+}
+@font-face {
+  font-family: "aeonik2";
+  src: url("../public/fonts/Aeonik/Aeonik-Light.otf");
+}
+@font-face {
+  font-family: "aeonik3";
+  src: url("../public/fonts/Aeonik/Aeonik-Regular.otf");
+}

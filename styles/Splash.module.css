@@ -1,0 +1,9 @@
+.splash_container {
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+  padding: 0px 4vw;
+  color: var(--txt);
+  justify-content: center;
+  flex-direction: column;
+}
