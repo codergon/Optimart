@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Logo from "./Logo";
 
 const Navbar = () => {
@@ -10,7 +9,7 @@ const Navbar = () => {
   return (
     <nav className="top_navbar">
       <div className="main_logo">
-        {/* <Logo /> */}
+        <Logo />
         optimart
       </div>
 
