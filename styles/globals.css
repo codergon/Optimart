@@ -59,12 +59,17 @@ main {
   align-items: center;
   letter-spacing: 1px;
   padding: 10px 3vw 5px;
-  /* padding: 10px 40px 5px; */
   text-transform: uppercase;
   justify-content: space-between;
   border-bottom: 1px solid #f5f5f5;
 }
 
+.top_nav_links_cover {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
 .top_nav_links {
   height: 100%;
   display: flex;
@@ -139,7 +144,7 @@ main {
   object-fit: cover;
 }
 
-.config_button {
+.config_butt {
   display: flex;
   color: #666;
   font-size: 18px;
