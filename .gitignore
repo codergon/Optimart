@@ -8,6 +8,12 @@
 # testing
 /coverage
 
+# extra codes storage
+/keep.txt
+
+# ngrok
+/ngrok.exe
+
 # next.js
 /.next/
 /out/
