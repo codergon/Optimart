@@ -16,7 +16,7 @@ const Navbar = () => {
 
       <div className="top_nav_links_cover">
         <div className="top_nav_links">
-          {width > 100 ? (
+          {width > 1090 ? (
             <>
               <ul>
                 {["Explorer", "Charts", "Resources"].map((item, index) => {
