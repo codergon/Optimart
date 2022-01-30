@@ -2,6 +2,8 @@
 .asset_cover {
   width: 260px;
   margin: 10px;
+  overflow: hidden;
+  border-radius: 10px;
   margin-bottom: 50px;
   height: min-content;
 }

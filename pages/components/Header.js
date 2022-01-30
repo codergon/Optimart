@@ -12,7 +12,7 @@ const Header = ({ headerTitle }) => {
       <meta name="theme-color" content="#000000" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-      <link rel="shortcut icon" type="image/jpg" href="OptiMart.png"></link>
+      <link rel="shortcut icon" href="/OptiMart.png" />
 
       <title>OptiMart, The largest NFT marketplace on Algorand Network.</title>
       <meta
@@ -34,7 +34,7 @@ const Header = ({ headerTitle }) => {
         property="og:description"
         content="Decentralized marketplace for NFTs built on Algorand Network. Explore, buy, sell, and auction all forms of Digital Assets and Collectibles."
       />
-      <meta property="og:image" content="" />
+      <meta property="og:image" content="/og.png" />
 
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content="https://www.optimart.io/" />
@@ -46,7 +46,7 @@ const Header = ({ headerTitle }) => {
         property="twitter:description"
         content="Decentralized marketplace for NFTs built on Algorand Network. Explore, buy, sell, and auction all forms of Digital Assets and Collectibles."
       />
-      <meta property="twitter:image" content=""></meta>
+      <meta property="twitter:image" content="/og.png" />
     </Head>
   );
 };
