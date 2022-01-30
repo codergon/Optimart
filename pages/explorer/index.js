@@ -30,6 +30,7 @@ const index = () => {
           {data?.map((item, index) => {
             return <AssetItem data={item} key={index} />;
           })}
+
           {/* {data?.length % 4} */}
         </div>
       </div>
