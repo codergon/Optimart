@@ -7,7 +7,7 @@ import SideDecor from "../components/SideDecor";
 import { db } from "../../firebase";
 import { collection, doc, getDoc, getDocs, setDoc } from "firebase/firestore";
 
-const index = () => {
+const Explore = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -42,4 +42,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Explore;
