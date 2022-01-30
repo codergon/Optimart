@@ -34,7 +34,6 @@ const Header = ({ headerTitle }) => {
         property="og:description"
         content="Decentralized marketplace for NFTs built on Algorand Network. Explore, buy, sell, and auction all forms of Digital Assets and Collectibles."
       />
-      <meta property="og:image" content="/og.png" />
 
       <meta property="twitter:card" content="summary_large_image" />
       <meta property="twitter:url" content="https://www.optimart.io/" />
@@ -46,7 +45,6 @@ const Header = ({ headerTitle }) => {
         property="twitter:description"
         content="Decentralized marketplace for NFTs built on Algorand Network. Explore, buy, sell, and auction all forms of Digital Assets and Collectibles."
       />
-      <meta property="twitter:image" content="/og.png" />
     </Head>
   );
 };

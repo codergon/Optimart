@@ -8,6 +8,8 @@ function MyApp({ Component, pageProps }) {
   return (
     <Layout>
       <Head>
+        <meta property="og:image" content="/og.png" />
+        <meta property="twitter:image" content="/og.png" />
         <link rel="shortcut icon" href="/Optimart.png" />
       </Head>
       <Component {...pageProps} />
