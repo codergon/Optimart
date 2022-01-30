@@ -10,15 +10,19 @@ import { collection, doc, getDoc, getDocs, setDoc } from "firebase/firestore";
 const index = () => {
   const [data, setData] = useState([]);
 
-  useEffect(async () => {
-    getDocs(collection(db, "nft")).then((querySnapshot) => {
-      const nftArray = [];
-      querySnapshot.forEach((doc) => {
-        nftArray.push(doc.data());
+  useEffect(() => {
+    const getNfts = async () => {
+      getDocs(collection(db, "nft")).then((querySnapshot) => {
+        const nftArray = [];
+        querySnapshot.forEach((doc) => {
+          nftArray.push(doc.data());
+        });
+        setData(nftArray);
+        console.log(data);
       });
-      setData(nftArray);
-      console.log(data);
-    });
+    };
+
+    getNfts();
   }, []);
 
   return (
