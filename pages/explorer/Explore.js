@@ -18,7 +18,6 @@ const Explore = () => {
           nftArray.push(doc.data());
         });
         setData(nftArray);
-        console.log(data);
       });
     };
 
