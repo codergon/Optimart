@@ -22,8 +22,8 @@
 
 .explore_nav_hero {
   display: flex;
-  min-height: 40vw;
-  padding-bottom: 50px;
+  height: 250px;
+  min-height: 55vh;
   align-items: center;
   justify-content: center;
   flex-direction: column;
