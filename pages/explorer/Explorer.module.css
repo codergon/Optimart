@@ -79,12 +79,6 @@
   border-right: none;
 }
 
-@media screen and (max-width: 1013px) {
-  .explore_list {
-    padding: 50px 4vw 20px;
-  }
-}
-
 @media screen and (max-width: 600px) {
   .explore_list {
     padding: 30px 0vw 20px;
