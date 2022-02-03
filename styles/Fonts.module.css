@@ -43,14 +43,14 @@
 
 /*  */
 @font-face {
-  font-family: "aeonik1";
-  src: url("../public/fonts/Aeonik/Aeonik-Thin.otf");
+  font-family: "f1";
+  src: url("../public/fonts/Founders/FoundersGrotesk-Light.otf");
 }
 @font-face {
-  font-family: "aeonik2";
-  src: url("../public/fonts/Aeonik/Aeonik-Light.otf");
+  font-family: "f2";
+  src: url("../public/fonts/Founders/FoundersGroteskWeb-Regular.woff2");
 }
 @font-face {
-  font-family: "aeonik3";
-  src: url("../public/fonts/Aeonik/Aeonik-Regular.otf");
+  font-family: "f3";
+  src: url("../public/fonts/Founders/FoundersGrotesk-Semibold.otf");
 }

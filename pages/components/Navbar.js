@@ -11,7 +11,7 @@ const Navbar = () => {
     <nav className="top_navbar">
       <div className="main_logo">
         <Logo />
-        optimart
+        Optimart
       </div>
 
       <div className="top_nav_links_cover">
@@ -19,43 +19,29 @@ const Navbar = () => {
           {width > 1090 ? (
             <>
               <ul>
-                {["Explorer", "Charts", "Resources"].map((item, index) => {
-                  return (
-                    <li
-                      key={index}
-                      className={`${index === 0 ? "active_page" : ""}`}
-                    >
-                      <p>{item}</p>
-                    </li>
-                  );
-                })}
+                <li key={"Market"}>
+                  <p>Market</p>
+                </li>
+                <li key={"Stats"}>
+                  <p>Stats</p>
+                </li>
+                <div className="top_nav_currency" key={"Currency"}>
+                  Algo <i className="uil uil-angle-down"></i>
+                </div>
+                <li key={"SignIn"}>
+                  <p>Sign In</p>
+                </li>
+                <div className="top_nav_currency" key={"Portal"}>
+                  Portal <i className="uil uil-angle-down"></i>
+                </div>
+                <div key={"Search"} className="top_nav_search_button">
+                  <p>
+                    <i class="uil uil-search"></i>
+                  </p>
+                </div>
               </ul>
-              <div className="top_nav_currency">
-                Algo <i className="uil uil-angle-down"></i>
-              </div>
             </>
           ) : null}
-
-          {width > 410 && (
-            <div className="top_nav_profile">
-              <div className="top_nav_avatar">
-                <img
-                  src="https://i.postimg.cc/sxFY0BRv/care-for-colors-02.jpg"
-                  alt="avatar"
-                />
-              </div>
-
-              <div className="top_nav_wallet_addr">
-                {`${wallet_address?.slice(0, 7)}...${wallet_address?.slice(
-                  -3
-                )}`}
-              </div>
-            </div>
-          )}
-        </div>
-
-        <div className="config_butt">
-          <i className="uil uil-wallet" />
         </div>
       </div>
     </nav>
