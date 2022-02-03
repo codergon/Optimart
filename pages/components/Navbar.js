@@ -36,7 +36,7 @@ const Navbar = () => {
                 </div>
                 <div key={"Search"} className="top_nav_search_button">
                   <p>
-                    <i class="uil uil-search"></i>
+                    <i className="uil uil-search"></i>
                   </p>
                 </div>
               </ul>
