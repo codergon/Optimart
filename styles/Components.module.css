@@ -92,7 +92,7 @@
   color: #757575;
   font-size: 18px;
   display: flex;
-  margin: 14px 0px 0px;
+  margin: 20px 0px 4px;
   flex-direction: row;
 }
 .bid_time_container {
@@ -111,6 +111,7 @@
 
   justify-content: space-between;
   flex-direction: row;
+  padding: 8px 0px 2px;
 }
 .artiste_dets_container {
   display: flex;

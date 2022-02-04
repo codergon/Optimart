@@ -1,6 +1,7 @@
 import React from "react";
-import sty from "../../styles/Components.module.css";
 import Currency from "./Currency";
+import Countdown from "react-countdown";
+import sty from "../../styles/Components.module.css";
 
 const AbbreviatedNumber = (num) => {
   var newValue = num;
@@ -32,6 +33,39 @@ const AbbreviatedNumber = (num) => {
 };
 
 const AssetItem = ({ data }) => {
+  const renderer = ({ days, hours, minutes, seconds, completed }) => {
+    if (completed) {
+      return (
+        <div className={sty.artiste_dets}>
+          <div className={sty.artiste_dets_container}>
+            <div className={sty.artiste_img}>
+              <img
+                src="https://i.postimg.cc/sxFY0BRv/care-for-colors-02.jpg"
+                alt=""
+              />
+            </div>
+
+            <p className={sty.artiste_name}>{data?.artiste}</p>
+          </div>
+
+          <div className={sty.artiste_follow_button}>Follow</div>
+        </div>
+      );
+    } else {
+      return (
+        <div className={sty.asset_bid_time}>
+          <div className={sty.bid_time_container}>
+            <span>
+              {days < 10 ? `0${days}` : days}:{hours < 10 ? `0${hours}` : hours}
+              :{minutes < 10 ? `0${minutes}` : minutes}:
+              {seconds < 10 ? `0${seconds}` : seconds}
+            </span>
+          </div>
+        </div>
+      );
+    }
+  };
+
   return (
     <div className={sty.asset_cover}>
       <div className={sty.asset_container}>
@@ -66,28 +100,7 @@ const AssetItem = ({ data }) => {
 
           <hr className={sty.asset_hor_line} />
 
-          {data?.price === 130 ? (
-            <div className={sty.asset_bid_time}>
-              <div className={sty.bid_time_container}>
-                <p>00</p>:<p>01</p>:<p>32</p>
-              </div>
-            </div>
-          ) : (
-            <div className={sty.artiste_dets}>
-              <div className={sty.artiste_dets_container}>
-                <div className={sty.artiste_img}>
-                  <img
-                    src="https://i.postimg.cc/sxFY0BRv/care-for-colors-02.jpg"
-                    alt=""
-                  />
-                </div>
-
-                <p className={sty.artiste_name}>{data?.artiste}</p>
-              </div>
-
-              <div className={sty.artiste_follow_button}>Follow</div>
-            </div>
-          )}
+          <Countdown date={Date.now() + data?.price} renderer={renderer} />
 
           {/*  */}
         </div>
