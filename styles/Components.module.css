@@ -8,33 +8,34 @@
   width: calc(100% / 3);
 }
 .asset_container {
+  overflow: hidden;
   border: var(--border-1);
 }
 .asset_image {
   width: 100%;
   aspect-ratio: 1;
-  /* height: 260px; */
   overflow: hidden;
+  cursor: pointer;
 }
 .asset_image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
+  transition: transform 0.5s;
+}
+.asset_image:hover img {
+  transform: scale(1.15);
 }
 
 .asset_details {
   padding: 20px 16px 19px;
   min-height: 120px;
+  height: 198px;
   max-height: 198px;
   overflow: hidden;
   letter-spacing: 0.01em;
 }
-
-/* .asset_fav_bid,
-.asset_name_bid,
-.asset_price_artiste {
-} */
 
 .asset_name_bid {
   display: flex;
@@ -92,18 +93,24 @@
   color: #757575;
   font-size: 18px;
   display: flex;
-  margin: 20px 0px 4px;
   flex-direction: row;
 }
+
+.auction_ends_p {
+  font-size: 14px;
+  color: #757575;
+  margin-bottom: 5px;
+}
+
 .bid_time_container {
   display: flex;
-  color: #fff;
-  font-size: 16px;
-  padding: 7px 14px;
+  color: #000;
+  font-size: 15px;
+  padding: 6px 14px;
   align-items: center;
-  background: #000;
-  border-radius: 8px;
+  border-radius: 25px;
   flex-direction: row;
+  border: var(--border-2);
 }
 
 .artiste_dets {
@@ -148,7 +155,124 @@
   flex-direction: row;
 }
 
+/* Suggested Asset Item */
+.asset_cover_suggested_cover {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+}
+
+.asset_cover_suggested {
+  width: 330px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  height: min-content;
+  padding: 0px 0px 0px 24px;
+  max-width: 40vw;
+  display: flex;
+  align-items: flex-end;
+}
+.asset_cover_suggested .asset_container {
+  border-radius: 15px;
+}
+.asset_cover_suggested .asset_container {
+  width: 100%;
+}
+
+.asset_cover_suggested .asset_image {
+  cursor: pointer;
+}
+.asset_cover_suggested .asset_image:hover img {
+  transform: scale(1.15);
+}
+
+.asset_details_suggested {
+  padding: 12px 14px;
+  /* min-height: 120px; */
+  max-height: 198px;
+  overflow: hidden;
+  letter-spacing: 0.01em;
+}
+.asset_name_price_suggested {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.asset_details_suggested .asset_name {
+  font-size: 20px;
+  padding-top: 2px;
+  margin-bottom: -1px;
+  font-family: f3 !important;
+}
+.asset_bid_time_suggested {
+  display: flex;
+  margin-top: 3px;
+  font-size: 18px;
+  color: #757575;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.bid_time_container_suggested {
+  padding: 0px;
+  display: flex;
+  color: #000;
+  font-size: 12px;
+  align-items: center;
+  flex-direction: row;
+  padding-bottom: 2px;
+  color: #757575;
+}
+.bid_time_container_suggested span {
+  width: 69px;
+}
+
+.bid_time_blinker {
+  display: flex;
+  margin-left: 10px;
+  border-radius: 100%;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+  border: 1px solid #000;
+}
+.bid_time_blinker_dot {
+  width: 4px;
+  height: 4px;
+  background: #000;
+  border-radius: 100%;
+}
+.bid_time_blinker_abs {
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+  position: absolute;
+  border: 1px solid #000;
+  animation: expand 5s infinite;
+}
+
+@keyframes expand {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.6);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 /*  */
+@media screen and (max-width: 1115px) {
+  .asset_cover_suggested {
+    width: 280px;
+    margin-right: 20px;
+  }
+}
+
 @media screen and (max-width: 1000px) {
   .asset_cover {
     width: 50%;

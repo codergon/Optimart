@@ -7,6 +7,7 @@ body {
   padding: 0;
   width: 100vw;
   height: 100vh;
+  max-width: 1440px;
   overflow-x: hidden;
   background: #f3f2ec;
   background: #ffffff;
@@ -28,16 +29,18 @@ body {
 :root {
   --txt: #000;
   --color-1: #c2c9d1;
+  --color-2: #aaa;
   --border-1: 1px solid #c2c9d1;
   --border-2: 1px solid #aaa;
+  --navbar-height: 66px;
 }
 
 main {
   width: 100vw;
   display: flex;
-  height: 100vh;
   min-height: 100vh;
   flex-direction: column;
+  padding-top: var(--navbar-height);
 }
 
 /* LOGO */
@@ -65,6 +68,7 @@ main {
 /* NAVBAR */
 .top_navbar {
   top: 0px;
+  z-index: 99;
   width: 100vw;
   display: flex;
   font-size: 17px;

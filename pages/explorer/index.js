@@ -4,7 +4,7 @@ import sty from "./Explorer.module.css";
 import AssetItem from "../components/AssetItem";
 
 import { db } from "../../firebase";
-import { collection, doc, getDoc, getDocs, setDoc } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 
 const Explore = () => {
   const [data, setData] = useState([]);
