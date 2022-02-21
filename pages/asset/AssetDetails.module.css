@@ -274,6 +274,7 @@
     justify-content: flex-start;
   }
   .showcase_dets {
+    min-width: fit-content;
     padding-right: 0px;
   }
   .showcase_all_about_asset {

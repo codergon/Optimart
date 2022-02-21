@@ -169,7 +169,7 @@
   margin-bottom: 30px;
   height: min-content;
   padding: 0px 0px 0px 24px;
-  max-width: 40vw;
+  /* max-width: 40vw; */
   display: flex;
   align-items: flex-end;
 }
