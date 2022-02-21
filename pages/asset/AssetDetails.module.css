@@ -130,6 +130,8 @@
 }
 .shcs_creator_img img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 100%;
 }
 .shcs_creator_name p,
@@ -301,10 +303,17 @@
     align-items: center;
     flex-direction: column;
   }
+  .shcs_name {
+    font-size: 42px;
+  }
+  .showcase_img_cov {
+    margin-top: 40px;
+  }
   .showcase_dets {
     width: 100%;
     max-width: 100%;
-    padding-left: 0px;
+    padding: 0px 15px;
+    margin-top: 30px;
   }
   .shcs_buy_cont,
   .shcs_details,

@@ -61,7 +61,7 @@ const AssetDetails = () => {
                   <div className={sty.shcs_creator}>
                     <div className={sty.shcs_creator_img}>
                       <img
-                        src="https://ipfs.pixura.io/ipfs/QmfDEUjjncpPGUjQrBgXgXYrqQMA5NHgbLFs2Z6A3TNhL8/Untitled_Artwork8.png"
+                        src="https://i.postimg.cc/x1GKpjsd/29113267470227-5b3b2f014a1f9.jpg"
                         alt=""
                       />
                     </div>
