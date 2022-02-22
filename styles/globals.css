@@ -71,6 +71,7 @@ main {
   z-index: 99;
   width: 100vw;
   display: flex;
+  min-height: 66px;
   font-size: 17px;
   position: fixed;
   background: #fff;

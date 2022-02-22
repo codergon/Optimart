@@ -16,7 +16,7 @@ const Navbar = () => {
 
       <div className="top_nav_links_cover">
         <div className="top_nav_links">
-          {width > 1090 ? (
+          {width > 900 ? (
             <>
               <ul>
                 <li key={"Market"}>
@@ -29,7 +29,7 @@ const Navbar = () => {
                   Algo <i className="uil uil-angle-down"></i>
                 </div>
                 <li key={"SignIn"}>
-                  <p>Sign In</p>
+                  <p>Connect Wallet</p>
                 </li>
                 <div className="top_nav_currency" key={"Portal"}>
                   Portal <i className="uil uil-angle-down"></i>
@@ -41,7 +41,9 @@ const Navbar = () => {
                 </div>
               </ul>
             </>
-          ) : null}
+          ) : (
+            <i className="uil uil-bars"></i>
+          )}
         </div>
       </div>
     </nav>
