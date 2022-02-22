@@ -100,7 +100,13 @@ const AssetItem = ({ data }) => {
 
         <div
           className={sty.asset_image}
-          onClick={() => router.push(`/asset/${data?.asset_id}`)}
+          onClick={() =>
+            router.push(
+              `/asset/${data?.asset_id}`,
+              `/asset/${data?.asset_id}`,
+              { scroll: true }
+            )
+          }
         >
           <img src={data?.img} alt="" />
         </div>

@@ -1,5 +1,5 @@
 import sty from "./AssetDetails.module.css";
-import { useRouter } from "next/router";
+import { Router, useRouter } from "next/router";
 import Currency from "../components/Currency";
 import { db } from "../../firebase";
 import Countdown from "react-countdown";
@@ -9,6 +9,18 @@ import Suggested from "../components/Suggested";
 import { collection, doc, getDoc, getDocs } from "firebase/firestore";
 
 const AbbreviatedNumber = (num) => {
+  //
+
+  useEffect(() => {
+    Router.events.on("routeChangeComplete", () => {
+      window.scroll({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
+    });
+  }, []);
+
   var newValue = num;
   if (num >= 1000) {
     var suffixes = ["", "k", "m", "b", "t"];

@@ -1,4 +1,6 @@
 import Head from "next/head";
+import { Router } from "next/router";
+import { useEffect } from "react";
 import "../styles/globals.css";
 import Layout from "./components/Layout";
 
