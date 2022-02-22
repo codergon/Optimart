@@ -11,16 +11,6 @@ import { collection, doc, getDoc, getDocs } from "firebase/firestore";
 const AbbreviatedNumber = (num) => {
   //
 
-  useEffect(() => {
-    Router.events.on("routeChangeComplete", () => {
-      window.scroll({
-        top: 0,
-        left: 0,
-        behavior: "smooth",
-      });
-    });
-  }, []);
-
   var newValue = num;
   if (num >= 1000) {
     var suffixes = ["", "k", "m", "b", "t"];
@@ -51,6 +41,16 @@ const AbbreviatedNumber = (num) => {
 
 const AssetDetails = ({ asset_info, collectionAssets }) => {
   //
+
+  useEffect(() => {
+    Router.events.on("routeChangeComplete", () => {
+      window.scroll({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
+    });
+  }, []);
 
   const asset_data = JSON.parse(asset_info);
 

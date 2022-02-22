@@ -7,7 +7,6 @@ import { db } from "../../firebase";
 import { collection, getDocs } from "firebase/firestore";
 
 const Explore = ({ assets }) => {
-  console.log(JSON.parse(assets));
   const [data, setData] = useState([]);
 
   useEffect(() => {
