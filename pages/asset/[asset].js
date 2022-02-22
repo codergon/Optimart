@@ -2,14 +2,45 @@ import sty from "./AssetDetails.module.css";
 import { useRouter } from "next/router";
 import Currency from "../components/Currency";
 import { db } from "../../firebase";
+import Countdown from "react-countdown";
 
 import { useEffect, useState } from "react";
 import Suggested from "../components/Suggested";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, doc, getDoc, getDocs } from "firebase/firestore";
 
-const AssetDetails = () => {
-  const router = useRouter();
-  const { asset } = router.query;
+const AbbreviatedNumber = (num) => {
+  var newValue = num;
+  if (num >= 1000) {
+    var suffixes = ["", "k", "m", "b", "t"];
+    var suffixNum = Math.floor(("" + num).length / 3);
+    var shortValue = "";
+    var precisionType = 2;
+
+    if (("" + num).length / 3 > 1.34) {
+      precisionType = 3;
+    }
+
+    for (var precision = precisionType; precision >= 1; precision--) {
+      shortValue = parseFloat(
+        (suffixNum != 0 ? num / Math.pow(1000, suffixNum) : num).toPrecision(
+          precision
+        )
+      );
+      var dotLessShortValue = (shortValue + "").replace(/[^a-zA-Z 0-9]+/g, "");
+      if (dotLessShortValue.length <= precisionType) {
+        break;
+      }
+    }
+    if (shortValue % 1 != 0) shortValue = shortValue.toFixed(1);
+    newValue = shortValue + suffixes[suffixNum];
+  }
+  return newValue;
+};
+
+const AssetDetails = ({ asset_info }) => {
+  //
+
+  const asset_data = JSON.parse(asset_info);
 
   const wallet_address =
     "CFTKEX3OBLKQH2M7GE6KPMLJPXDKFCT2EKBRJKL62P3VONOZR6N2GGPU7Q";
@@ -30,26 +61,37 @@ const AssetDetails = () => {
     getNfts();
   }, []);
 
+  const renderer = ({ days, hours, minutes, seconds, completed }) => {
+    if (completed) {
+      return <>--:--:--:--</>;
+    } else {
+      return (
+        <>
+          {days < 10 ? `0${days}` : days}:{hours < 10 ? `0${hours}` : hours}:
+          {minutes < 10 ? `0${minutes}` : minutes}:
+          {seconds < 10 ? `0${seconds}` : seconds}
+        </>
+      );
+    }
+  };
+
   return (
     <div className={sty.showcase_container}>
       <div className={sty.showcase_inn}>
         <div className={sty.showcase_all_about_asset}>
           <div className={sty.showcase_first_sect}>
             <div className={sty.showcase_img_cov}>
-              <img
-                src="https://ipfs.pixura.io/ipfs/QmQ9PV6gUG8UnqtCPhr1K3zZXtbN4oDABdMQoR8nEKGEgP/droid-jn5x69.jpg"
-                alt=""
-              />
+              <img src={asset_data?.img} alt="" />
             </div>
 
             <div className={sty.showcase_dets}>
               <div className={sty.showcase_dets_inn}>
-                <div className={sty.shcs_name}>Little Animals</div>
+                <div className={sty.shcs_name}>{asset_data?.asset_name}</div>
                 <div className={sty.shcs_buy_cont}>
                   <div className={sty.shcs_buy_price}>
                     <p className={sty.shcs_buy_price_p1}>Current Bid</p>
                     <div className={sty.shcs_buy_price_sect}>
-                      <p>0.978</p>
+                      <p>{AbbreviatedNumber(asset_data?.price)}</p>
                       <Currency size={12} />
                       <p>Algo</p>
                     </div>
@@ -67,7 +109,7 @@ const AssetDetails = () => {
                     </div>
                     <div className={sty.shcs_creator_name}>
                       <p>Creator</p>
-                      <p>Alpha Glitch</p>
+                      <p>{asset_data?.artiste}</p>
                     </div>
                   </div>
 
@@ -102,7 +144,10 @@ const AssetDetails = () => {
                     </div>
 
                     <div className={sty.shcs_details_time_sect}>
-                      12:30:40:01
+                      <Countdown
+                        date={Date.now() + asset_data?.price}
+                        renderer={renderer}
+                      />
                     </div>
                   </div>
 
@@ -188,3 +233,22 @@ const AssetDetails = () => {
 };
 
 export default AssetDetails;
+
+export async function getServerSideProps(context) {
+  const docRef = doc(db, "nft", context.query.asset);
+  const docSnap = await getDoc(docRef);
+
+  if (docSnap.exists()) {
+    return {
+      props: {
+        asset_info: JSON.stringify(docSnap.data()),
+      },
+    };
+  } else {
+    return {
+      props: {
+        asset_info: null,
+      },
+    };
+  }
+}

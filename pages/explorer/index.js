@@ -6,21 +6,14 @@ import AssetItem from "../components/AssetItem";
 import { db } from "../../firebase";
 import { collection, getDocs } from "firebase/firestore";
 
-const Explore = () => {
+const Explore = ({ assets }) => {
+  console.log(JSON.parse(assets));
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const getNfts = async () => {
-      getDocs(collection(db, "nft")).then((querySnapshot) => {
-        const nftArray = [];
-        querySnapshot.forEach((doc) => {
-          nftArray.push(doc.data());
-        });
-        setData(nftArray);
-      });
-    };
-
-    getNfts();
+    if (!!JSON.parse(assets)) {
+      setData(JSON.parse(assets));
+    }
   }, []);
 
   return (
@@ -38,3 +31,27 @@ const Explore = () => {
 };
 
 export default Explore;
+
+export async function getServerSideProps(context) {
+  let nftArray = [];
+
+  await getDocs(collection(db, "nft")).then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      const { price, img, artiste, asset_name, time_remaining } = doc.data();
+      nftArray.push({
+        asset_id: doc.id,
+        price,
+        img,
+        artiste,
+        asset_name,
+        time_remaining,
+      });
+    });
+  });
+
+  return {
+    props: {
+      assets: JSON.stringify(nftArray),
+    },
+  };
+}

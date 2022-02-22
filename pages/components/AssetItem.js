@@ -2,6 +2,7 @@ import React from "react";
 import Currency from "./Currency";
 import Countdown from "react-countdown";
 import sty from "../../styles/Components.module.css";
+import { Router, useRouter } from "next/router";
 
 const AbbreviatedNumber = (num) => {
   var newValue = num;
@@ -90,12 +91,17 @@ const AssetItem = ({ data }) => {
     }
   };
 
+  const router = useRouter();
+
   return (
     <div className={sty.asset_cover}>
       <div className={sty.asset_container}>
         {/*  */}
 
-        <div className={sty.asset_image}>
+        <div
+          className={sty.asset_image}
+          onClick={() => router.push(`/asset/${data?.asset_id}`)}
+        >
           <img src={data?.img} alt="" />
         </div>
 

@@ -26,11 +26,12 @@
 .showcase_img_cov {
   margin: 8px;
   width: 42%;
+  overflow: hidden;
   min-width: 360px;
-  /* margin-left: 5%; */
 }
 .showcase_img_cov img {
   width: 100%;
+  border-radius: 15px;
 }
 
 /*  */
