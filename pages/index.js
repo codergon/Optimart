@@ -1,6 +1,11 @@
-import Splash from "./Splash";
-import Explorer from "./explorer/index";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 export default function Home() {
-  return <Explorer />;
+  const router = useRouter();
+  useEffect(() => {
+    router.replace("/explorer/");
+  }, []);
+
+  return <></>;
 }

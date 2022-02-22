@@ -37,7 +37,7 @@ const AbbreviatedNumber = (num) => {
   return newValue;
 };
 
-const AssetDetails = ({ asset_info }) => {
+const AssetDetails = ({ asset_info, collectionAssets }) => {
   //
 
   const asset_data = JSON.parse(asset_info);
@@ -48,17 +48,7 @@ const AssetDetails = ({ asset_info }) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const getNfts = async () => {
-      getDocs(collection(db, "nft")).then((querySnapshot) => {
-        const nftArray = [];
-        querySnapshot.forEach((doc) => {
-          nftArray.push(doc.data());
-        });
-        setData(nftArray);
-      });
-    };
-
-    getNfts();
+    setData(JSON.parse(collectionAssets));
   }, []);
 
   const renderer = ({ days, hours, minutes, seconds, completed }) => {
@@ -238,16 +228,34 @@ export async function getServerSideProps(context) {
   const docRef = doc(db, "nft", context.query.asset);
   const docSnap = await getDoc(docRef);
 
+  let nftArray = [];
+
+  await getDocs(collection(db, "nft")).then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      const { price, img, artiste, asset_name, time_remaining } = doc.data();
+      nftArray.push({
+        asset_id: doc.id,
+        price,
+        img,
+        artiste,
+        asset_name,
+        time_remaining,
+      });
+    });
+  });
+
   if (docSnap.exists()) {
     return {
       props: {
         asset_info: JSON.stringify(docSnap.data()),
+        collectionAssets: JSON.stringify(nftArray),
       },
     };
   } else {
     return {
       props: {
         asset_info: null,
+        collectionAssets: JSON.stringify(nftArray),
       },
     };
   }
