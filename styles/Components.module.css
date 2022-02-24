@@ -9,6 +9,7 @@
 }
 .asset_container {
   overflow: hidden;
+  border-radius: 15px;
   border: var(--border-1);
 }
 .asset_image {
@@ -34,6 +35,7 @@
   height: 198px;
   max-height: 198px;
   overflow: hidden;
+  background: #fff;
   letter-spacing: 0.01em;
 }
 

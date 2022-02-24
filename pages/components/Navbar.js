@@ -10,8 +10,8 @@ const Navbar = () => {
   return (
     <nav className="top_navbar">
       <div className="main_logo">
-        <Logo />
-        Optimart
+        {/* <Logo />
+        Optimart */}
       </div>
 
       <div className="top_nav_links_cover">
@@ -42,7 +42,7 @@ const Navbar = () => {
               </ul>
             </>
           ) : (
-            <i className="uil uil-bars"></i>
+            <i className="uil uil-bars" style={{ fontSize: "29px" }}></i>
           )}
         </div>
       </div>

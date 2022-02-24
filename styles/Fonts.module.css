@@ -43,6 +43,11 @@
 
 /*  */
 @font-face {
+  font-family: "akk";
+  src: url("../public/fonts/AkkuratMonoLL-Regular.woff2");
+}
+
+@font-face {
   font-family: "f1";
   src: url("../public/fonts/Founders/FoundersGrotesk-Light.otf");
 }

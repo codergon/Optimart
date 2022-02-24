@@ -1,6 +1,16 @@
 @import "Reset.module.css";
 @import "Fonts.module.css";
 
+:root {
+  --txt: #000;
+  --color-1: #c2c9d1;
+  --color-2: #aaa;
+  --background: #f5f5f5;
+  --border-1: 1px solid #c2c9d1;
+  --border-2: 1px solid #aaa;
+  --navbar-height: 66px;
+}
+
 html,
 body {
   margin: 0;
@@ -9,8 +19,7 @@ body {
   height: 100vh;
   max-width: 1440px;
   overflow-x: hidden;
-  background: #f3f2ec;
-  background: #ffffff;
+  background: #000;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -26,21 +35,59 @@ body {
   box-sizing: border-box !important;
 }
 
-:root {
-  --txt: #000;
-  --color-1: #c2c9d1;
-  --color-2: #aaa;
-  --border-1: 1px solid #c2c9d1;
-  --border-2: 1px solid #aaa;
-  --navbar-height: 66px;
-}
-
 main {
   width: 100vw;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  padding-top: var(--navbar-height);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background: var(--background);
+}
+
+/* SCROLL BAR */
+.scroll_bar {
+  height: 40px;
+  background: #000;
+  position: relative;
+}
+.scroll_bar_inn {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  position: absolute;
+}
+.scroll_copy {
+  color: #fff;
+  white-space: nowrap;
+  display: inline-block;
+  animation: scrollText 200s linear infinite;
+}
+
+.scroll_copy span {
+  font-size: 13px;
+  margin: 0px 8px;
+  white-space: nowrap;
+  letter-spacing: -0.05rem;
+  font-family: akk !important;
+}
+.scroll_copy i {
+  width: 2px;
+  height: 2px;
+  margin: 0 8px;
+  background: #fff;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 /* LOGO */
@@ -71,13 +118,11 @@ main {
   z-index: 99;
   width: 100vw;
   display: flex;
-  min-height: 66px;
   font-size: 17px;
-  position: fixed;
-  background: #fff;
+  position: sticky;
   flex-direction: row;
   align-items: center;
-  padding: 0px 3vw 5px;
+  padding: 25px 3vw 5px;
   justify-content: space-between;
 }
 
