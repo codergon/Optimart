@@ -4,8 +4,9 @@
   overflow: hidden;
   margin-bottom: 50px;
   height: min-content;
-  padding: 0px 24px;
-  width: calc(100% / 3);
+  padding: 0px 15px;
+  width: calc(100% / 4);
+  white-space: nowrap;
 }
 .asset_container {
   overflow: hidden;
@@ -30,131 +31,60 @@
 }
 
 .asset_details {
-  padding: 20px 16px 19px;
-  min-height: 120px;
-  height: 198px;
-  max-height: 198px;
+  padding: 0px 16px;
   overflow: hidden;
   background: #fff;
-  letter-spacing: 0.01em;
+  white-space: nowrap;
 }
-
-.asset_name_bid {
-  display: flex;
-  font-weight: 500;
-  flex-direction: column;
-}
-.asset_name {
-  font-size: 24px;
-  margin-bottom: 6px;
-}
-
-.list_bid_price {
+.asset_name_bid,
+.asset_artiste_title {
   display: flex;
   font-size: 15px;
-  line-height: 17px;
+  font-weight: 500;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
 }
-.list_price,
-.bid_price {
-  display: flex;
-  max-width: 50%;
-  flex-direction: column;
-}
-.list_price_title,
-.bid_price_title {
-  color: grey;
-  width: 100%;
+.asset_name_bid p:first-child,
+.asset_artiste_title p:first-child {
+  width: 50%;
   overflow: hidden;
-  white-space: nowrap;
   text-overflow: ellipsis;
-  margin-bottom: 4px;
+  text-transform: capitalize;
 }
-.list_price_value,
-.bid_price_value {
-  color: #333;
-  width: 100%;
+.asset_artiste_title {
+  margin-top: 16px;
+  font-size: 600;
+  color: #757575;
+}
+.list_price_value {
   display: flex;
-  overflow: hidden;
   align-items: center;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  flex-wrap: nowrap;
   flex-direction: row;
 }
-/*  */
 
 .asset_hor_line {
   border: 0;
   margin-top: 16px;
   margin-bottom: 14px;
+  margin: 10px 0px 12px;
   border-top: 1px solid var(--color-1);
 }
 
 .asset_bid_time {
-  color: #757575;
   font-size: 18px;
   display: flex;
+  margin-bottom: 13px;
   flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .auction_ends_p {
   font-size: 14px;
   color: #757575;
   margin-bottom: 5px;
-}
-
-.bid_time_container {
-  display: flex;
-  color: #000;
-  font-size: 15px;
-  padding: 6px 14px;
-  align-items: center;
-  border-radius: 25px;
-  flex-direction: row;
-  border: var(--border-2);
-}
-
-.artiste_dets {
-  display: flex;
-
-  justify-content: space-between;
-  flex-direction: row;
-  padding: 8px 0px 2px;
-}
-.artiste_dets_container {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-}
-.artiste_img {
-  width: 30px;
-  height: 30px;
-  display: flex;
-  margin-right: 10px;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  border-radius: 100%;
-  border: var(--border-1);
-}
-.artiste_img img {
-  width: 100%;
-}
-.artiste_name {
-  font-size: 16px;
-  text-transform: capitalize;
-}
-
-.artiste_follow_button {
-  display: flex;
-  color: #fff;
-  font-size: 16px;
-  padding: 7px 14px;
-  align-items: center;
-  background: #000;
-  border-radius: 8px;
-  flex-direction: row;
 }
 
 /* Suggested Asset Item */
@@ -167,12 +97,11 @@
 
 .asset_cover_suggested {
   width: 330px;
+  display: flex;
   overflow: hidden;
   margin-bottom: 30px;
   height: min-content;
   padding: 0px 0px 0px 24px;
-  /* max-width: 40vw; */
-  display: flex;
   align-items: flex-end;
 }
 .asset_cover_suggested .asset_container {
@@ -191,10 +120,8 @@
 
 .asset_details_suggested {
   padding: 12px 14px;
-  /* min-height: 120px; */
   max-height: 198px;
   overflow: hidden;
-  letter-spacing: 0.01em;
 }
 .asset_name_price_suggested {
   display: flex;
@@ -217,18 +144,37 @@
   align-items: center;
   justify-content: space-between;
 }
+
+.bid_time_container,
 .bid_time_container_suggested {
   padding: 0px;
   display: flex;
-  color: #000;
-  font-size: 12px;
+  font-size: 14px;
+  color: #757575;
   align-items: center;
   flex-direction: row;
   padding-bottom: 2px;
-  color: #757575;
 }
+.bid_time_container p {
+  color: #444;
+}
+
+.bid_time_container p,
+.bid_time_container_suggested p {
+  width: 25px;
+  height: 20px;
+  display: flex;
+  margin-right: 5px;
+  background: #eee;
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+}
+
+.bid_time_container span,
 .bid_time_container_suggested span {
-  width: 69px;
+  margin-right: 5px;
+  font-weight: bold;
 }
 
 .bid_time_blinker {
@@ -255,6 +201,11 @@
   animation: expand 5s infinite;
 }
 
+.asset_fav_butt {
+  font-size: 15px;
+  color: #757575;
+}
+
 @keyframes expand {
   0% {
     transform: scale(1);
@@ -275,13 +226,67 @@
   }
 }
 
+@media screen and (max-width: 1190px) {
+  .asset_cover {
+    width: calc(100% / 3);
+  }
+}
 @media screen and (max-width: 1000px) {
   .asset_cover {
+    padding: 0px 10px;
+  }
+}
+@media screen and (max-width: 830px) {
+  .asset_cover {
+    padding: 0px 5px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .asset_cover {
     width: 50%;
+    padding: 0px 15px;
   }
 }
 @media screen and (max-width: 600px) {
   .asset_cover {
-    width: 100%;
+    padding: 0px 5px;
+    margin-bottom: 20px;
+  }
+  .asset_details {
+    padding: 0px 13px;
+  }
+
+  .asset_name_bid,
+  .asset_artiste_title {
+    font-size: 13px;
+  }
+
+  .asset_artiste_title {
+    margin-top: 13px;
+  }
+
+  .asset_hor_line {
+    margin: 10px 0px;
+  }
+
+  .auction_ends_p {
+    font-size: 13px;
+    margin-bottom: 3px;
+  }
+
+  .bid_time_container,
+  .bid_time_container_suggested {
+    font-size: 12px;
+  }
+  .bid_time_container p,
+  .bid_time_container_suggested p {
+    width: 25px;
+    height: 20px;
+    margin-right: 2px;
+    border-radius: 4px;
+  }
+  .bid_time_container span,
+  .bid_time_container_suggested span {
+    margin-right: 2px;
   }
 }

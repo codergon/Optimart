@@ -30,7 +30,7 @@ body {
 
 * {
   line-height: normal;
-  letter-spacing: 0.7px;
+  letter-spacing: 0.02rem;
   font-family: f2 !important;
   box-sizing: border-box !important;
 }
@@ -92,7 +92,7 @@ main {
 
 /* LOGO */
 #main_logo {
-  width: 40px;
+  width: 30px;
 }
 #main_logo path {
   stroke: #000000;
@@ -122,7 +122,7 @@ main {
   position: sticky;
   flex-direction: row;
   align-items: center;
-  padding: 25px 3vw 5px;
+  padding: 25px 5vw 5px;
   justify-content: space-between;
 }
 
@@ -172,4 +172,11 @@ main {
 }
 .top_navbar ul li:hover p {
   color: #000;
+}
+
+@media screen and (max-width: 600px) {
+  main {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+  }
 }

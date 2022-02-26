@@ -11,25 +11,27 @@ const ExploreNav = () => {
           </p>
         </div>
 
-        <div className={sty.explore_type}>
-          {["Collections", "Single"].map((item, index) => {
-            return (
-              <div
-                className={
-                  index == 1
-                    ? sty.explore_type_item_active
-                    : sty.explore_type_item
-                }
-                key={index}
-              >
-                {item}
-              </div>
-            );
-          })}
-        </div>
-        <div className={sty.explore_category}></div>
+        <div className={sty.explore_filters}>
+          <div className={sty.explore_type}>
+            {["Singles", "Collections"].map((item, index) => {
+              return (
+                <div
+                  className={
+                    index == 0
+                      ? sty.explore_type_item_active
+                      : sty.explore_type_item
+                  }
+                  key={index}
+                >
+                  {item}
+                </div>
+              );
+            })}
+          </div>
+          <div className={sty.explore_category}></div>
 
-        <hr className={sty.explore_nav_hor_line} />
+          <hr className={sty.explore_nav_hor_line} />
+        </div>
       </div>
     </div>
   );
